@@ -12,7 +12,7 @@ class ColorPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    int index = info.fromIndex!;
+    int index = info.fromIndex;
     _paint.color = colors[index];
     canvas.drawRect(
         new Rect.fromLTWH(0.0, 0.0, size.width, size.height), _paint);

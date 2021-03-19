@@ -55,7 +55,8 @@ class MySliverFillViewport extends SliverMultiBoxAdaptorWidget {
 
   @override
   RenderSliverFillViewport createRenderObject(BuildContext context) {
-    final SliverMultiBoxAdaptorElement element = context as SliverMultiBoxAdaptorElement;
+    final SliverMultiBoxAdaptorElement element =
+        context as SliverMultiBoxAdaptorElement;
     return new MyViewPort(
         childManager: element,
         itemCount: itemCount,

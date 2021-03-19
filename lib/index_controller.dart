@@ -10,12 +10,12 @@ class IndexController extends ChangeNotifier {
 
   late Completer _completer;
 
-  int? index;
+  late int index;
   late bool animation;
-  int? event;
+  late int event;
 
   Future move(int index, {bool animation: true}) {
-    this.animation = animation ?? true;
+    this.animation = animation;
     this.index = index;
     this.event = MOVE;
     _completer = new Completer();
@@ -25,7 +25,7 @@ class IndexController extends ChangeNotifier {
 
   Future next({bool animation: true}) {
     this.event = NEXT;
-    this.animation = animation ?? true;
+    this.animation = animation;
     _completer = new Completer();
     notifyListeners();
     return _completer.future;
@@ -33,7 +33,7 @@ class IndexController extends ChangeNotifier {
 
   Future previous({bool animation: true}) {
     this.event = PREVIOUS;
-    this.animation = animation ?? true;
+    this.animation = animation;
     _completer = new Completer();
     notifyListeners();
     return _completer.future;

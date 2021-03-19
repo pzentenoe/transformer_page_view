@@ -154,29 +154,27 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ],
           ),
-          new Row(
+          Row(
             children: <Widget>[
-              new RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   _controller!.previous();
                 },
-                color: Colors.blue,
                 child: new Text("Preious"),
               ),
-              new SizedBox(
+              SizedBox(
                 width: 8.0,
               ),
-              new RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   _controller!.next();
                 },
-                color: Colors.blue,
                 child: new Text("Next"),
               ),
-              new SizedBox(
+              SizedBox(
                 width: 8.0,
               ),
-              new RaisedButton(
+              ElevatedButton(
                 onPressed: () {
                   showModalBottomSheet(
                       context: context,
@@ -199,8 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: _types.map((t) => new Text(t)).toList());
                       });
                 },
-                color: Colors.blue,
-                child: new Text("Animation"),
+                child: Text("Animation"),
               ),
             ],
           ),
@@ -208,7 +205,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: new SizedBox(
             child: new TransformerPageView(
                 loop: false,
-                index: _index,
+                index: _index!,
                 viewportFraction: _viewportFraction,
                 controller: _controller,
                 transformer: getTransformer(),
